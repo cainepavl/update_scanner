@@ -1,4 +1,4 @@
-# Microsoft Update Scanner
+# Update Scanner
 
 A lightweight Python automation tool that monitors Microsoft-related RSS feeds and community blogs, filters articles by topics relevant to a Windows IT environment, and delivers a categorized weekly email digest.
 
