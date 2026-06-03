@@ -74,13 +74,17 @@ pip install feedparser
 
 ### 3. Configure your email credentials
 
-Open `ms_update_scanner.py` and edit the configuration block near the top:
+Create a `config.py` file in the same directory as `ms_update_scanner.py`:
 
 ```python
+SMTP_SERVER     = "smtp.gmail.com"
+SMTP_PORT       = 465
 SENDER_EMAIL    = "you@gmail.com"
-SENDER_PASSWORD = "your-app-password"   # See below
+SENDER_PASSWORD = "your-app-password"   # See below — must be a Gmail App Password
 RECEIVER_EMAIL  = "you@gmail.com"
 ```
+
+This file is excluded from version control via `.gitignore` — never commit it.
 
 ### 4. Generate a Gmail App Password
 
@@ -154,11 +158,31 @@ Add a new entry to the `FEEDS` dict:
 
 ---
 
+## Testing
+
+```bash
+python3 -m unittest test_ms_update_scanner -v
+```
+
+30 tests across 4 classes, no network calls or real credentials needed:
+
+| Class | Coverage |
+|---|---|
+| `TestMergeResults` | Empty input, single feed, cross-feed deduplication, insertion-order preservation |
+| `TestBuildEmailBody` | Date header, uppercase category labels, placeholder for empty sections, `any_hits` flag |
+| `TestFetchAndCategorize` | Title/summary matching, case-insensitivity, multi-category hits, malformed feed handling, parse exceptions |
+| `TestSendSummary` | SMTP server/port, login credentials, correct From/To/Subject/body on the outgoing message |
+
+---
+
 ## Project Structure
 
 ```
-microsoft-update-scanner/
-├── ms_update_scanner.py   # Main script — all logic and configuration
+update_scanner/
+├── ms_update_scanner.py      # Main script — all logic and configuration
+├── config.py                 # Credentials (gitignored — create locally, see Setup)
+├── requirements.txt          # feedparser
+├── test_ms_update_scanner.py # Unit tests
 └── README.md
 ```
 
