@@ -7,11 +7,6 @@
 
 <img width="1408" height="768" alt="update_scanner" src="https://github.com/user-attachments/assets/dfda3bb6-7757-4840-9dae-49bfef760885" />
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.x](https://img.shields.io/badge/python-3.x-blue.svg)]()
-[![Platform](https://img.shields.io/badge/platform-PythonAnywhere-informational.svg)]()
-[![Topic](https://img.shields.io/badge/topic-rss--automation-informational.svg)]()
-
 A lightweight Python automation tool that monitors Microsoft-related RSS feeds and community blogs, filters articles by topics relevant to a Windows IT environment, and delivers a categorized weekly email digest.
 
 Designed to run as a scheduled task on [PythonAnywhere](https://www.pythonanywhere.com/) with zero infrastructure overhead.
