@@ -1,4 +1,4 @@
-# Update Scanner
+# 🕵️ Update Scanner
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.x](https://img.shields.io/badge/python-3.x-blue.svg)]()
@@ -13,7 +13,23 @@ Designed to run as a scheduled task on [PythonAnywhere](https://www.pythonanywhe
 
 ---
 
-## What It Does
+## 📋 Table of Contents
+
+- [What It Does](#what-it-does)
+- [Monitored Sources](#monitored-sources)
+- [Filter Categories](#filter-categories)
+- [Requirements](#requirements)
+- [Setup](#setup)
+- [Deploying to PythonAnywhere](#deploying-to-pythonanywhere)
+- [Customizing](#customizing)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+- [License](#license)
+- [Contact/Connect](#contactconnect)
+
+---
+
+## 🔍 What It Does
 
 Every Monday, the script:
 
@@ -24,7 +40,7 @@ Every Monday, the script:
 
 ---
 
-## Monitored Sources
+## 📡 Monitored Sources
 
 | Source | What It Covers |
 |---|---|
@@ -37,7 +53,7 @@ Every Monday, the script:
 
 ---
 
-## Filter Categories
+## 🏷️ Filter Categories
 
 Articles are matched against these categories. An article can appear under more than one.
 
@@ -52,7 +68,7 @@ Articles are matched against these categories. An article can appear under more 
 
 ---
 
-## Requirements
+## ⬇️ Requirements
 
 - Python 3.8+
 - [feedparser](https://pypi.org/project/feedparser/) (`pip install feedparser`)
@@ -62,21 +78,29 @@ All other dependencies (`smtplib`, `ssl`, `email`) are part of the Python standa
 
 ---
 
-## Setup
+## 🛠️ Setup
 
-### 1. Clone or upload the script
+### 🐍 1. Verify Python
 
 ```bash
-git clone https://github.com/yourusername/microsoft-update-scanner.git
+python3 --version
+# Requires Python 3.8+
 ```
 
-### 2. Install the dependency
+### 📥 2. Clone the Repository
+
+```bash
+git clone https://github.com/cainepavl/update_scanner.git
+cd update_scanner
+```
+
+### ⬇️ 3. Install the Dependency
 
 ```bash
 pip install feedparser
 ```
 
-### 3. Configure your email credentials
+### ⚙️ 4. Configure Your Email Credentials
 
 Create a `config.py` file in the same directory as `ms_update_scanner.py`:
 
@@ -90,7 +114,7 @@ RECEIVER_EMAIL  = "you@gmail.com"
 
 This file is excluded from version control via `.gitignore` — never commit it.
 
-### 4. Generate a Gmail App Password
+### 🔑 5. Generate a Gmail App Password
 
 Regular Gmail passwords will not work. You need an App Password:
 
@@ -106,7 +130,7 @@ Regular Gmail passwords will not work. You need an App Password:
 > SENDER_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD")
 > ```
 
-### 5. Test locally
+### ▶️ 6. Test Locally
 
 ```bash
 python ms_update_scanner.py
@@ -116,7 +140,7 @@ You should see each feed fetched in the terminal, followed by `Email sent succes
 
 ---
 
-## Deploying to PythonAnywhere
+## 🚀 Deploying to PythonAnywhere
 
 PythonAnywhere offers free scheduled task hosting — no server management required.
 
@@ -129,7 +153,7 @@ PythonAnywhere offers free scheduled task hosting — no server management requi
 
 ---
 
-## Customizing
+## 🔧 Customizing
 
 ### Add a new keyword to an existing category
 
@@ -162,7 +186,7 @@ Add a new entry to the `FEEDS` dict:
 
 ---
 
-## Testing
+## 🧪 Testing
 
 ```bash
 python3 -m unittest test_ms_update_scanner -v
@@ -179,7 +203,7 @@ python3 -m unittest test_ms_update_scanner -v
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 update_scanner/
@@ -192,6 +216,16 @@ update_scanner/
 
 ---
 
-## License
+## 📄 License
 
 MIT — free to use, modify, and redistribute.
+
+---
+
+## 📩 Contact/Connect
+
+**Caine Pavlosky**
+
+* Email: [cainepavl@outlook.com](mailto:cainepavl@outlook.com)
+* Portfolio: [fairdinkumstudios.com](https://fairdinkumstudios.com/)
+* LinkedIn: [linkedin.com/in/cainepavlosky008](https://linkedin.com/in/cainepavlosky008)
